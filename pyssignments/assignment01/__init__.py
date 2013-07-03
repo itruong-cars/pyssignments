@@ -34,6 +34,7 @@ class Transformalizer(object):
         the transformed object.
         """
         result = self.transformer(item)
+        return result
 
     def bulk_transform(self, list_of_data):
         """
@@ -43,8 +44,8 @@ class Transformalizer(object):
         new_list = []
 
         for item in list_of_data:
-            self.transform(item)
-            new_list.append(item)
+            new_item = self.transform(item)
+            new_list.append(new_item)
 
         return new_list
 
